@@ -37,26 +37,26 @@ app.add_middleware(
 
 
 ###SEARCH INDEX
-def set_search_atlas_index():
+#def set_search_atlas_index():
+#
+#    try:
+#        client = get_mongo_client()
+#        tasks_collection = client.get_collection('tasks')
+#        search_index_model = SearchIndexModel(
+#            definition={
+#                "mappings": {
+#                    "dynamic": True
+#                },
+#            },
+#            name="default",
+#        )
+#        result = tasks_collection.create_search_index(model=search_index_model)
+#        print(result)
+#    except Exception as e:
+#        print(e)
 
-    try:
-        client = get_mongo_client()
-        tasks_collection = client.get_collection('tasks')
-        search_index_model = SearchIndexModel(
-            definition={
-                "mappings": {
-                    "dynamic": True
-                },
-            },
-            name="default",
-        )
-        result = tasks_collection.create_search_index(model=search_index_model)
-        print(result)
-    except Exception as e:
-        print(e)
 
-
-set_search_atlas_index()
+#set_search_atlas_index()
 
 
 
@@ -86,10 +86,12 @@ async def say_hello(name: str):
 async def hello_message(dto: ISayHelloDto):
     return {"message": f"Hello {dto.message}"}
   
-@app.get("/ping")
-async def ping():
-    conn = createDbConnection()
-    return client_ping(conn)
+#@app.get("/ping")
+#async def ping():
+#    conn = createDbConnection()
+#    return client_ping(conn)
+
+
 #test
 @app.get("/api/tasks")
 async def get_tasks():
